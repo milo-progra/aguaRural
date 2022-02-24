@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/style.css">
+
+
+    <title>Hello, world!</title>
+    
+  </head>
+  <body>
+   
+
+    <div class="container-sm" id="table">
+
+        <table class="table" >
+            <thead>
+                <tr>
+                    
+                    <th scope="col">mes</th>
+                    <th scope="col">consumo</th>
+                    <th scope="col">precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% projects.forEach((project) => { %>
+                <tr>
+                    <td><%= project._id %></td>
+                    <td><%= project.mes %></td>
+                    <td><%= project.consumo %></td>
+                    <td><%= project.precio %></td>
+                    <td>
+                        <a href="/delete/<%= project._id %>">borrar</a>
+                    </td>
+                </tr>
+             <% }) %>
+                
+            </tbody>
+        </table>
+        <a href="/agregar">Agregar</a>
+    </div>
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+<!-- <table>
+    <tr>
+        <th>mes</th>
+        <th>consumo</th>
+        <th>precio</th>
+    </tr>
+    <tr>
+        <td>enero </td>
+        <td>20 l</td>
+        <td>$5000</td>
+    </tr>
+</table> -->
