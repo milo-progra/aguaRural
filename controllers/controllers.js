@@ -48,6 +48,9 @@ var controller = {
             
             return res.redirect('/')
         })
+    },
+    update:function(req, res) {
+        return res.render('actualizar') 
     }
 
 

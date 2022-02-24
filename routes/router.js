@@ -10,6 +10,7 @@ router.get("/agregar", projectControllers.agregarMes)
 router.get("/", projectControllers.view)
 router.post('/save-mes', projectControllers.saveMes)
 router.get('/delete/:id',projectControllers.delete)
+router.get('/actualizar',projectControllers.update)
 
 
 
