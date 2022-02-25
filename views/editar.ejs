@@ -1,0 +1,18 @@
+<h1>Agrega un histaorial de consumo</h1>
+
+<form action="/actualizar/guardar" method="post">
+
+    <label for="id">id</label>
+    <input type="text" name="id" id="id" value="<%= usuario.id %>" readonly>
+
+    <label for="mes">mes</label>
+    <input type="text" name="mes" id="mes" value="<%= usuario.mes %>">
+
+    <label for="consumo" >Consumo</label>
+    <input type="text" name="consumo" id="consumo" value="<%= usuario.consumo %>">
+
+    <label for="precio" >Precio</label>
+    <input type="number" name="precio" id="precio" value="<%= usuario.precio %>" >
+
+    <input type="submit" value="Agregar historial">
+</form>

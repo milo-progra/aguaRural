@@ -49,9 +49,57 @@ var controller = {
             return res.redirect('/')
         })
     },
-    update:function(req, res) {
-        return res.render('actualizar') 
+    // update:function(req, res) {
+    //     projectId = req.params.id
+        
+    //     Project.findByIdAndUpdate(projectId, (err, projectUpdate) =>{
+    //         if(err) return res.status(500).send({message:'no se algrado acceder al servidor'}) 
+    //         if(!projectUpdate) return res.status(404).send({message: 'el servidor no existe'})
+            
+    //         return res.render('actualizar', {user:projectUpdate})
+    //     })    
+    // }
+    update:async function (req, res) {
+        
+
+        const usuario = await Project.findById(req.params.id)
+        console.log(usuario);
+
+        return res.render('editar', {usuario})
+        
+    //     projectId = req.params.id;
+    // console.log(req.params.id);
+    //     Project.find({projectId}).exec((err, projectUpdate)=>{
+    //         if(err) return res.status(404).send({message:'el projecto no se encuentra'})
+    //         if(!projectUpdate) return res.status(500).send({message:'no se accesedio al servidor'})
+           
+        
+    //     return res.render('editar', {projectUpdate:projectUpdate})
+    //     })
+        // Project.find({}).exec((err, projects)=>{
+        //     if(err) return res.status(500).send({message:'error'})
+        //     if(!projects) return res.status(404).send({message:' no fue posible mostrar los projectos!!'})
+
+        //     return res.render('index', {projects:projects})
+        // });
+        
+        
+    },
+    saveUpdate:function(req, res){
+        const idProject = req.body.id
+        console.log(idProject);
+
+        Project.findByIdAndUpdate(idProject,{
+            mes: req.body.mes,
+            consumo: req.body.consumo,
+            precio: req.body.precio
+        }, (err, usuario) =>{
+            console.log(err,  idProject);
+
+            res.redirect('/')
+        })
     }
+    
 
 
 

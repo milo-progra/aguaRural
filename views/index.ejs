@@ -30,13 +30,13 @@
             <tbody>
                 <% projects.forEach((project) => { %>
                 <tr>
-                    <td><%= project._id %></td>
+                   
                     <td><%= project.mes %></td>
                     <td><%= project.consumo %></td>
                     <td><%= project.precio %></td>
                     <td>
                         <a href="/delete/<%= project._id %>">borrar</a>
-                        <a href="/actualizar">Actulizar</a>
+                        <a href="/actualizar/<%= project._id %>">Actulizar</a>
                     </td>
                 </tr>
              <% }) %>
