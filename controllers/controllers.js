@@ -60,31 +60,12 @@ var controller = {
     //     })    
     // }
     update:async function (req, res) {
-        
-
         const usuario = await Project.findById(req.params.id)
         console.log(usuario);
 
-        return res.render('editar', {usuario})
-        
-    //     projectId = req.params.id;
-    // console.log(req.params.id);
-    //     Project.find({projectId}).exec((err, projectUpdate)=>{
-    //         if(err) return res.status(404).send({message:'el projecto no se encuentra'})
-    //         if(!projectUpdate) return res.status(500).send({message:'no se accesedio al servidor'})
-           
-        
-    //     return res.render('editar', {projectUpdate:projectUpdate})
-    //     })
-        // Project.find({}).exec((err, projects)=>{
-        //     if(err) return res.status(500).send({message:'error'})
-        //     if(!projects) return res.status(404).send({message:' no fue posible mostrar los projectos!!'})
-
-        //     return res.render('index', {projects:projects})
-        // });
-        
-        
+        return res.render('editar', {usuario})                
     },
+
     saveUpdate:function(req, res){
         const idProject = req.body.id
         console.log(idProject);
